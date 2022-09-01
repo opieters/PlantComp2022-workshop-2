@@ -8,38 +8,39 @@ void setup()
   
   dwenguinoLCD.print("Hello. Press a key...");
   
-  pinMode(UP, INPUT);
-  pinMode(DOWN, INPUT);
-  pinMode(LEFT, INPUT);
-  pinMode(RIGHT, INPUT);
-  pinMode(CENTER, INPUT);
+  pinMode(SW_N, INPUT_PULLUP);
+  pinMode(SW_S, INPUT_PULLUP);
+  pinMode(SW_E, INPUT_PULLUP);
+  pinMode(SW_W, INPUT_PULLUP);
+  pinMode(SW_C, INPUT_PULLUP);
+  pinMode(13, OUTPUT);
 }
 
 void loop()
 {
-  if(digitalRead(UP) == HIGH){
+  if(digitalRead(SW_N) == LOW){
     dwenguinoLCD.clear();
     dwenguinoLCD.print("up");
-    while(digitalRead(UP) == HIGH);
+    while(digitalRead(SW_N) == LOW);
   }
-  if(digitalRead(DOWN) == HIGH){
+  if(digitalRead(SW_S) == LOW){
     dwenguinoLCD.clear();
     dwenguinoLCD.print("down");
-    while(digitalRead(DOWN) == HIGH);
+    while(digitalRead(SW_S) == LOW);
   }
-  if(digitalRead(LEFT) == HIGH){
+  if(digitalRead(SW_W) == LOW){
     dwenguinoLCD.clear();
     dwenguinoLCD.print("left");
-    while(digitalRead(LEFT) == HIGH);
+    while(digitalRead(SW_W) == LOW);
   }
-  if(digitalRead(RIGHT) == HIGH){
+  if(digitalRead(SW_E) == LOW){
     dwenguinoLCD.clear();
     dwenguinoLCD.print("right");
-    while(digitalRead(RIGHT) == HIGH);
+    while(digitalRead(SW_E) == LOW);
   }
-  if(digitalRead(CENTER) == HIGH){
+  if(digitalRead(SW_C) == LOW){
     dwenguinoLCD.clear();
     dwenguinoLCD.print("center");
-    while(digitalRead(CENTER) == HIGH);
+    while(digitalRead(SW_C) == LOW);
   }
 }
