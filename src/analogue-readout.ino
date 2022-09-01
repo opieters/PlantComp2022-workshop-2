@@ -8,7 +8,7 @@ void setup()
 {
   initDwenguino();
   
-  dwenguinoLCD.print("Reading the sensor value");
+  dwenguinoLCD.print("Reading sensor");
   delay(1000);
 }
 
