@@ -8,17 +8,20 @@ void setup()
 {
   initDwenguino();
   
-  dwenguinoLCD.print("Reading the sensor value");
+  dwenguinoLCD.print("Press C");
   delay(1000);
+
+  pinMode(SW_C, INPUT_PULLUP);
+  pinMode(13, OUTPUT);
 }
 
 void loop()
 {
-  if(digitalRead(CENTER) == HIGH){
-    digitalWrite(0, HIGH);
+  if(digitalRead(SW_C) == LOW){
+    digitalWrite(13, HIGH);
     delay(10);
     
-    while(digitalRead(CENTER) == HIGH){
+    while(digitalRead(SW_C) == LOW){
       dwenguinoLCD.clear();
       value = analogRead(A0);
       dwenguinoLCD.print("Value: ");
@@ -26,6 +29,6 @@ void loop()
       delay(1000);
     }
     
-    digitalWrite(0, LOW);
+    digitalWrite(13, LOW);
   }
 }
