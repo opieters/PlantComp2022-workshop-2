@@ -19,6 +19,8 @@ Linux users probably have Python already installed.
 
 ## Libraries
 
+You only have to download these if you are working from your own Python installation. Installation is _not_ required when WinPython is used.
+
 Make sure that you have the following dependencies installed:
 
 - pyserial
