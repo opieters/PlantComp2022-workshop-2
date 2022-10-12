@@ -11,7 +11,7 @@ if __name__ == "__main__":
     while 1:
       if ser.in_waiting:
         value = ser.readline()
-        print(f"Received {value})
+        print(f"Received {value}")
         
         value = float(value)
         data.append(value)
